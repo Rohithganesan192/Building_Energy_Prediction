@@ -1,0 +1,3 @@
+model,feature_group,target_transform,holdout_period,MAE,RMSE,R2,status
+RandomForest,GroupB,raw,December 2016,34.35549414698712,175.64598700853307,0.9876365115809524,SUCCESS
+LinearRegression,GroupB,raw,December 2016,40.31525892592588,190.69133677502538,0.9854277541712296,BASELINE

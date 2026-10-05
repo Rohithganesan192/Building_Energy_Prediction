@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+venv/
+.venv/
+
+# Environment Variables
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+app/ui/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Data and Models
+data/raw/
+data/processed/
+data/features/
+old_project/
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Root-level raw/dataset CSV files
+/*.csv
+
+# Generated training metadata/logs
+catboost_info/
+
+# Jupyter temporary files
+.ipynb_checkpoints/

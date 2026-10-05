@@ -1,0 +1,32 @@
+feature,feature_group,mean_abs_shap,global_rank,controllability,interpretation_type,recommendation_eligibility,reason,limitation
+lag_1,Historical,373.60,1,Historical state,Observational,Indirectly actionable,Represents immediate past energy state and persistent load.,Cannot be directly altered; it is an observational proxy.
+lag_24,Historical,61.42,2,Historical state,Observational,Indirectly actionable,Represents daily consumption cycle.,Observational proxy; not directly manipulable.
+rolling_mean_24,Historical,23.17,3,Historical state,Observational,Indirectly actionable,Represents multi-hour baseline load.,Observational proxy; not directly manipulable.
+lag_168,Historical,8.59,4,Historical state,Observational,Indirectly actionable,Represents weekly consumption cycle.,Observational proxy; not directly manipulable.
+hour_cos,Temporal,4.14,5,Contextual/non-controllable,Contextual,Actionable via scheduling,Indicates time-of-day operational pattern.,Time cannot be changed; action requires human schedule review.
+dew_temperature,Weather,3.63,6,Contextual/non-controllable,Contextual,Actionable via HVAC review,Indicates weather/humidity load.,Weather cannot be changed; action requires HVAC setpoint review.
+hour_sin,Temporal,3.35,7,Contextual/non-controllable,Contextual,Actionable via scheduling,Indicates time-of-day operational pattern.,Time cannot be changed; action requires human schedule review.
+square_feet,Building,2.93,8,Identification/context only,Contextual,Not directly actionable,Static building metadata distinguishing scale.,Building size cannot be altered operationally.
+rolling_mean_168,Historical,2.34,9,Historical state,Observational,Indirectly actionable,Represents multi-day baseline load.,Observational proxy.
+meter,Meter,2.31,10,Identification/context only,Contextual,Not directly actionable,Identifies utility type (e.g. electricity vs chilled water).,Cannot be physically altered.
+hour,Temporal,2.20,11,Contextual/non-controllable,Contextual,Actionable via scheduling,Indicates exact hour of day.,Time cannot be changed.
+rolling_std_24,Historical,1.90,12,Historical state,Observational,Not directly actionable,Indicates daily load volatility.,Observational proxy.
+rolling_std_168,Historical,1.63,13,Historical state,Observational,Not directly actionable,Indicates weekly load volatility.,Observational proxy.
+air_temperature,Weather,1.21,14,Contextual/non-controllable,Contextual,Actionable via HVAC review,Indicates external thermal load.,Weather cannot be changed.
+day_of_year,Temporal,0.66,15,Contextual/non-controllable,Contextual,Not directly actionable,Indicates seasonality.,Time cannot be changed.
+sea_level_pressure,Weather,0.43,16,Contextual/non-controllable,Contextual,Not directly actionable,Indicates broader weather systems.,Not physically relevant for direct intervention.
+site_id,Building,0.42,17,Identification/context only,Contextual,Not directly actionable,Identifies geographic cluster.,Location is static.
+year_built,Building,0.38,18,Identification/context only,Contextual,Not directly actionable,Indicates building age.,Static metadata.
+primary_use,Building,0.37,19,Identification/context only,Contextual,Not directly actionable,Indicates building function.,Static function.
+wind_direction,Weather,0.35,20,Contextual/non-controllable,Contextual,Not directly actionable,Wind direction.,Minor thermal impact; not actionable.
+day_of_week,Temporal,0.27,21,Contextual/non-controllable,Contextual,Actionable via scheduling,Indicates weekly operational pattern.,Time cannot be changed.
+wind_speed,Weather,0.24,22,Contextual/non-controllable,Contextual,Not directly actionable,Wind speed.,Minor thermal impact; not actionable.
+month_cos,Temporal,0.22,23,Contextual/non-controllable,Contextual,Not directly actionable,Indicates seasonality.,Time cannot be changed.
+cloud_coverage,Weather,0.19,24,Contextual/non-controllable,Contextual,Not directly actionable,Solar radiation proxy.,Weather cannot be changed.
+month_sin,Temporal,0.19,25,Contextual/non-controllable,Contextual,Not directly actionable,Indicates seasonality.,Time cannot be changed.
+day_of_week_cos,Temporal,0.18,26,Contextual/non-controllable,Contextual,Actionable via scheduling,Indicates weekly operational pattern.,Time cannot be changed.
+day_of_week_sin,Temporal,0.17,27,Contextual/non-controllable,Contextual,Actionable via scheduling,Indicates weekly operational pattern.,Time cannot be changed.
+floor_count,Building,0.06,28,Identification/context only,Contextual,Not directly actionable,Building scale indicator.,Static metadata.
+month,Temporal,0.05,29,Contextual/non-controllable,Contextual,Not directly actionable,Indicates seasonality.,Time cannot be changed.
+is_weekend,Temporal,0.04,30,Contextual/non-controllable,Contextual,Actionable via scheduling,Indicates non-working days.,Time cannot be changed.
+precip_depth_1_hr,Weather,0.02,31,Contextual/non-controllable,Contextual,Not directly actionable,Indicates rain.,Weather cannot be changed.

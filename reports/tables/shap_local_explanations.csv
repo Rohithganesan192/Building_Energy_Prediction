@@ -1,0 +1,6 @@
+observation_id,actual_value,predicted_value,base_value,sum_shap,top_positive_features,top_negative_features
+0,61.642,58.53675282216594,[382.56285619],-324.02610336481297,hour_cos (+3.85) | meter (+2.12) | rolling_std_24 (+1.82),lag_1 (-256.33) | lag_24 (-44.41) | rolling_mean_24 (-22.13)
+1,1367.72,1372.9890828561356,[382.56285619],990.4262266692441,lag_1 (+855.39) | lag_24 (+101.14) | rolling_mean_24 (+51.85),hour_sin (-11.01) | hour (-5.93) | air_temperature (-3.18)
+2,1437.5,1629.957234969374,[382.56285619],1247.3943787824605,lag_1 (+981.81) | lag_24 (+178.95) | rolling_mean_24 (+41.29),rolling_std_24 (-10.19) | dew_temperature (-3.45) | air_temperature (-2.98)
+3,0.0,0.053808091120600435,[382.56285619],-382.5090480958625,meter (+1.69) | rolling_std_168 (+0.61) | hour_sin (+0.40),lag_1 (-285.64) | lag_24 (-53.40) | rolling_mean_24 (-31.38)
+4,109.33,106.95328184649289,[382.56285619],-275.6095743404827,hour_cos (+3.46) | meter (+1.75) | hour (+1.01),lag_1 (-214.42) | lag_24 (-44.48) | rolling_mean_24 (-11.68)

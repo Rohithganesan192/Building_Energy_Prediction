@@ -1,0 +1,85 @@
+flowchart TD
+    %% Styling for academic/IEEE-style layout
+    classDef process fill:#ffffff,stroke:#000000,stroke-width:2px,color:#000000,font-family:Arial,font-size:14px,shape:rect
+    classDef group fill:#f8f9fa,stroke:#000000,stroke-width:1px,color:#000000,font-family:Arial,font-size:14px,stroke-dasharray: 5 5
+    classDef item fill:#ffffff,stroke:#6c757d,stroke-width:1px,color:#000000,font-family:Arial,font-size:13px,shape:rect
+
+    Dataset[ASHRAE Great Energy Predictor III Dataset]:::process
+    Val[Data Validation]:::process
+    Clean[Data Cleaning]:::process
+    EDA_Main[Exploratory Data Analysis]:::process
+    
+    Dataset --> Val
+    Val --> Clean
+    Clean --> EDA_Main
+    
+    subgraph FE_Group [Feature Engineering]
+        direction TB
+        FE_Temp[Temporal Features]:::item
+        FE_Bldg[Building Features]:::item
+        FE_Wthr[Weather Features]:::item
+        FE_Mtr[Meter Information]:::item
+        FE_Hist[Historical Energy-State Features]:::item
+    end
+    FE_Group:::group
+
+    EDA_Main --> FE_Group
+    
+    FGC[Feature Group Construction]:::process
+    FE_Group --> FGC
+    
+    subgraph ML_Group [Machine Learning Model Development]
+        direction TB
+        ML_LR[Linear Regression]:::item
+        ML_DT[Decision Tree]:::item
+        ML_RF[Random Forest]:::item
+        ML_XGB[XGBoost]:::item
+        ML_LGB[LightGBM]:::item
+        ML_CAT[CatBoost]:::item
+    end
+    ML_Group:::group
+
+    FGC --> ML_Group
+    
+    Comp[Model Comparison]:::process
+    Tuning[Hyperparameter Tuning]:::process
+    Holdout[Final Temporal Holdout Evaluation]:::process
+    
+    ML_Group --> Comp
+    Comp --> Tuning
+    Tuning --> Holdout
+    
+    subgraph SHAP_Group [SHAP-Based Explainability]
+        direction TB
+        SHAP_Glob[Global Explanation]:::item
+        SHAP_Loc[Local Explanation]:::item
+    end
+    SHAP_Group:::group
+    
+    Holdout --> SHAP_Group
+    
+    subgraph EDA_Driver_Group [Energy Driver Analysis]
+        direction TB
+        Drv_Hist[Historical]:::item
+        Drv_Temp[Temporal]:::item
+        Drv_Wthr[Weather]:::item
+        Drv_Bldg[Building]:::item
+        Drv_Mtr[Meter]:::item
+    end
+    EDA_Driver_Group:::group
+
+    SHAP_Group --> EDA_Driver_Group
+    
+    subgraph Rec_Group [Recommendation Engine]
+        direction TB
+        Rec_Hist[Historical / Non-actionable Factors]:::item
+        Rec_Ctx[Contextual Factors]:::item
+        Rec_Act[Potentially Actionable Operational Deviations]:::item
+    end
+    Rec_Group:::group
+
+    EDA_Driver_Group --> Rec_Group
+    
+    App[Application Interface]:::process
+    
+    Rec_Group --> App

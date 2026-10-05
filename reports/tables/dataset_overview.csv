@@ -1,0 +1,11 @@
+key,value
+train_rows,20216100
+test_rows,41697600
+unique_buildings_train,1449
+unique_meters,4
+unique_sites_meta,16
+train_ts_min,2016-01-01 00:00:00
+train_ts_max,2016-12-31 23:00:00
+metadata_rows,1449
+weather_train_rows,139773
+weather_test_rows,277243

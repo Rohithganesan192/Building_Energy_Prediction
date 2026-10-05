@@ -1,0 +1,35 @@
+{
+    "building_metadata": {
+        "raw_rows": 1449,
+        "proc_rows": 1449
+    },
+    "weather_train": {
+        "raw_rows": 139773,
+        "proc_rows": 139773,
+        "sentinel_converted": 5780,
+        "duplicate_site_ts_keys": 0
+    },
+    "weather_test": {
+        "raw_rows": 277243,
+        "proc_rows": 277243,
+        "sentinel_converted": 12271,
+        "duplicate_site_ts_keys": 0
+    },
+    "train": {
+        "raw_rows": 20216100,
+        "proc_rows": 20216100,
+        "building_id_sum": 16158283983.0,
+        "meter_sum": 13391977.0,
+        "target_sum": 42799931388.803,
+        "row_id_sum": null
+    },
+    "test": {
+        "raw_rows": 41697600,
+        "proc_rows": 41697600,
+        "building_id_sum": 33674245920.0,
+        "meter_sum": 27699120.0,
+        "target_sum": null,
+        "row_id_sum": 869344902031200.0
+    },
+    "integrity_passed": true
+}

@@ -1,0 +1,95 @@
+flowchart BT
+    %% Styling for academic/IEEE-style architecture diagram
+    classDef layer fill:#f9fafb,stroke:#000000,stroke-width:1px,color:#000000,font-family:Arial,stroke-dasharray: 5 5
+    classDef comp fill:#ffffff,stroke:#333333,stroke-width:1.5px,color:#000000,font-family:Arial,font-size:13px,shape:rect
+
+    subgraph L6 [6. APPLICATION INTERFACE LAYER]
+        UI1[Prediction Dashboard]:::comp
+        UI2[Explanation Dashboard]:::comp
+        UI3[Energy Drivers]:::comp
+        UI4[Recommendations]:::comp
+        UI5[Model Lab]:::comp
+        UI6[Building Explorer]:::comp
+        UI7[Reports]:::comp
+    end
+
+    subgraph L5 [5. EXPLAINABILITY AND DECISION-SUPPORT LAYER]
+        EXP1[SHAP TreeExplainer]:::comp
+        EXP2[Local Explanation]:::comp
+        EXP3[Global Explanation]:::comp
+        EXP4[Energy Driver Analysis]:::comp
+        EXP5[Recommendation Engine]:::comp
+    end
+
+    subgraph L4 [4. MACHINE LEARNING LAYER]
+        ML3[Prediction Service]:::comp
+        ML2[Trained Random Forest Model]:::comp
+        ML1[Preprocessing Pipeline]:::comp
+        ML_Out[Prediction Output]:::comp
+    end
+
+    subgraph L3 [3. FEATURE ENGINEERING LAYER]
+        FE1[Temporal Features]:::comp
+        FE2[Building Features]:::comp
+        FE3[Weather Features]:::comp
+        FE4[Meter Features]:::comp
+        FE5[Historical Energy-State Features]:::comp
+    end
+
+    subgraph L2 [2. DATA PROCESSING LAYER]
+        DP1[Data Validation]:::comp
+        DP2[Data Cleaning]:::comp
+        DP3[Missing-Value Handling]:::comp
+        DP4[Data Integration]:::comp
+    end
+
+    subgraph L1 [1. DATA LAYER]
+        D1[ASHRAE Building Metadata]:::comp
+        D2[Weather Data]:::comp
+        D3[Historical Meter Readings]:::comp
+        D4[Timestamp and Meter Information]:::comp
+    end
+
+    %% Apply layer styling
+    L1:::layer
+    L2:::layer
+    L3:::layer
+    L4:::layer
+    L5:::layer
+    L6:::layer
+
+    %% Main Data Flow (Bottom-Up)
+    D1 & D2 & D3 & D4 --> DP1
+    DP1 --> DP2
+    DP2 --> DP3
+    DP3 --> DP4
+    DP4 --> FE1 & FE2 & FE3 & FE4 & FE5
+    
+    FE1 & FE2 & FE3 & FE4 & FE5 --> ML1
+    
+    ML1 --> ML2
+    ML2 --> ML_Out
+    
+    %% Explainability Flow
+    ML2 --> EXP1
+    EXP1 --> EXP2
+    EXP1 --> EXP3
+    EXP2 --> EXP4
+    EXP3 --> EXP4
+    EXP4 --> EXP5
+
+    %% Decision-Support Output to Application Interface
+    EXP2 --> UI2
+    EXP3 --> UI2
+    EXP4 --> UI3
+    EXP5 --> UI4
+
+    %% Prediction Output to Application Interface
+    ML_Out --> UI1
+    ML_Out --> UI5
+    ML_Out --> UI6
+    ML_Out --> UI7
+    
+    %% User-Input / Request Path (Top-Down)
+    UI1 -. "User Request" .-> ML3
+    ML3 -. "Query" .-> ML2

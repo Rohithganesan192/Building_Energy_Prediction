@@ -1,0 +1,55 @@
+{
+  "status": "READY FOR 10% COMPARISON",
+  "audits": {
+    "target_transformation": {
+      "status": "PASS WITH LIMITATION",
+      "notes": "Inverse transform logic is correct, but untuned log1p models extrapolate wildly, leading to massive RMSE due to exponential amplification."
+    },
+    "chronological_split": {
+      "status": "PASS",
+      "notes": "December holdout is correctly isolated and untouched during the grid search."
+    },
+    "preprocessing_leakage": {
+      "status": "PASS",
+      "notes": "Imputers and encoders are strictly fitted on the train split only."
+    },
+    "feature_group_a": {
+      "status": "PASS",
+      "notes": "Exogenous features only. No historical features included."
+    },
+    "feature_group_b": {
+      "status": "PASS WITH LIMITATION",
+      "notes": "Valid for operational one-step-ahead forecasting where recent consumption is observed. Cannot be directly applied to blind batch test sets."
+    },
+    "historical_leakage": {
+      "status": "PASS",
+      "notes": "shift(1) correctly applied before rolling aggregations. Current target is strictly excluded."
+    },
+    "building_sampling": {
+      "status": "PASS",
+      "notes": "Deterministic hash guarantees the same 23-building sample across all runs, preserving chronological integrity."
+    },
+    "model_comparability": {
+      "status": "PASS",
+      "notes": "All models receive semantically equivalent features with safe, model-specific encodings."
+    },
+    "metrics": {
+      "status": "PASS",
+      "notes": "Metrics calculated on the original raw energy scale. Negative predictions are clipped to the minimum observed target."
+    },
+    "result_consistency": {
+      "status": "PASS",
+      "notes": "24 experiments completed. LightGBM (log1p, GroupB) achieved lowest MAE. CatBoost (raw, GroupB) achieved highest R2."
+    },
+    "computational_validity": {
+      "status": "PASS",
+      "notes": "Lightweight, untuned parameters correctly configured for pilot verification."
+    },
+    "lightgbm_warnings": {
+      "status": "PASS",
+      "notes": "Normal behavior. Caused by tree growth reaching limits on small pilot data subsets."
+    }
+  },
+  "issues_found": [],
+  "required_corrections": []
+}

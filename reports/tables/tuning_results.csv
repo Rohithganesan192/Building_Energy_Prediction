@@ -1,0 +1,7 @@
+model,feature_group,target_transform,best_parameters,validation_mae,validation_rmse,validation_r2,training_time_seconds,status
+LinearRegression,GroupB,raw,{},43.69159497223729,275.5437626858482,0.9573094335919596,4.19,SUCCESS
+DecisionTree,GroupB,raw,"{""min_samples_split"": 50, ""min_samples_leaf"": 20, ""max_features"": null, ""max_depth"": 15}",44.01932897048302,284.0864391751968,0.954621330923789,24.32,SUCCESS
+RandomForest,GroupB,raw,"{""n_estimators"": 200, ""min_samples_split"": 2, ""min_samples_leaf"": 20, ""max_features"": null, ""max_depth"": 20}",38.97162543445567,262.07492843998983,0.9613809399304988,577.13,SUCCESS
+XGBoost,GroupB,raw,"{""subsample"": 0.7, ""reg_lambda"": 10, ""reg_alpha"": 0, ""n_estimators"": 300, ""min_child_weight"": 1, ""max_depth"": 7, ""learning_rate"": 0.1, ""colsample_bytree"": 1.0}",49.36877046060111,360.8402021928824,0.9267882846105641,18.19,SUCCESS
+LightGBM,GroupB,raw,"{""subsample"": 1.0, ""reg_lambda"": 5, ""reg_alpha"": 0, ""num_leaves"": 31, ""n_estimators"": 100, ""min_child_samples"": 50, ""max_depth"": 9, ""learning_rate"": 0.05, ""colsample_bytree"": 1.0}",50.04881424306012,343.64422089825166,0.9335998841365113,2.37,SUCCESS
+CatBoost,GroupB,raw,"{""random_strength"": 5, ""learning_rate"": 0.05, ""l2_leaf_reg"": 3, ""iterations"": 200, ""depth"": 8, ""bagging_temperature"": 5}",52.44981341352217,346.9479437211081,0.9323170337840089,86.98,SUCCESS

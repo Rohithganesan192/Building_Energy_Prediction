@@ -1,0 +1,11 @@
+# Data Cleaning and Preprocessing Decisions
+
+| Variable | Issue | Evidence | Proposed Treatment | Reason | Decision Status |
+|---|---|---|---|---|---|
+| `meter_reading` | Extreme skewness / Outliers | Max=21.9M, Mean=2117, Approx Median=79.7. Right-skewed distribution. | Experimentally compare raw target with log1p-transformed target | The strong right-skew of meter_reading provides justification for experimentally comparing the raw target with a log1p-transformed target. MAE, RMSE and R² will be reported according to the finalized target/evaluation strategy. If target transformation is used, predictions will be transformed back to the original energy-consumption scale before practical metric comparison. | Requires Experiment |
+| `meter_reading` | Site 0 Steam Anomaly | Site 0 steam meter has extremely high readings not matching typical profiles. | Leave unchanged for now | Site 0 steam contains extreme values requiring further investigation. The observations will not be removed without evidence. | Requires Further Analysis |
+| `precip_depth_1_hr` | -1 values | Present in weather data. | Evaluate converting -1 to NaN, then apply missing-value treatment | -1 is a sentinel/missing-value representation in the ASHRAE weather data and requires explicit preprocessing treatment. | Requires Experiment |
+| `floor_count` | 75.5% missing | Missing count is very high. | Do not drop immediately | These variables are retained initially despite substantial missingness. Their treatment must support a fair comparison across all six planned models. | Requires Experiment / preprocessing design |
+| `year_built` | 53.4% missing | High missingness. | Do not drop immediately | These variables are retained initially despite substantial missingness. Their treatment must support a fair comparison across all six planned models. | Requires Experiment / preprocessing design |
+| `cloud_coverage` | ~50% missing | Missing in weather. | Forward fill / Interpolate / Leave missing | Weather patterns are continuous; treatment must support all six models. | Requires Experiment |
+| `timestamp` | Missing hours in weather | Weather temporal coverage has gaps. | Resample / Interpolate | Time series forecasting requires continuous temporal alignment. | Requires Experiment |

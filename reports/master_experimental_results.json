@@ -1,0 +1,39 @@
+{
+    "project": "Explainable Machine Learning for Building Energy Consumption Prediction and Energy Efficiency Optimization",
+    "dataset": "ASHRAE Great Energy Predictor III",
+    "target": "meter_reading",
+    "final_model": "RandomForestRegressor",
+    "feature_group": "Group B",
+    "xai_method": "SHAP TreeExplainer",
+    "training_period": "2016-01-01 to 2016-11-30",
+    "validation_period": "2016-10-01 to 2016-11-30",
+    "holdout_period": "2016-12-01 to 2016-12-31",
+    "final_training_rows": 1975653,
+    "final_holdout_rows": 184584,
+    "final_holdout_metrics": {
+        "MAE": 34.35549414698712,
+        "RMSE": 175.64598700853307,
+        "R2": 0.9876365115809524
+    },
+    "shap_group_attribution": {
+        "Historical": 95.14,
+        "Temporal": 2.31,
+        "Weather": 1.22,
+        "Building": 0.84,
+        "Meter": 0.46
+    },
+    "demo_observation": {
+        "building_id": 565,
+        "site_id": 4,
+        "timestamp": "2016-01-08 00:00:00",
+        "primary_use": "Education",
+        "meter": 0,
+        "actual_reading": 8.25,
+        "predicted_reading": 7.99
+    },
+    "application_testing": {
+        "passed": 39,
+        "warnings": 4,
+        "frontend_build": "successful"
+    }
+}

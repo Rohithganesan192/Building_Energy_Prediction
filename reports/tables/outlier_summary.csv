@@ -1,0 +1,5 @@
+meter,energy_type,p99.9_threshold,extreme_count_in_sample,extreme_pct_in_sample
+0,Electricity,4934.22510000002,247,0.1025
+1,Chilled Water,15328.74260000006,65,0.0778
+2,Steam,124725.89200003757,66,0.1219
+3,Hot Water,40612.94370001659,41,0.1599

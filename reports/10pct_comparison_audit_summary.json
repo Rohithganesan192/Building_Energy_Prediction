@@ -1,0 +1,28 @@
+{
+  "status": "COMPLETED",
+  "audits": {
+    "historical_feature_boundary": {
+      "status": "PASS",
+      "findings": "shift(1) strictly applied prior to rolling aggregations. No current or future targets leak into historical features. Operates exactly under the documented one-step-ahead assumption (T-1 target is available at T)."
+    },
+    "linear_regression_anomaly": {
+      "status": "VERIFIED AND PLAUSIBLE",
+      "findings": "LinearRegression (raw, GroupB) achieved R2=0.9573. This is structurally plausible because building energy usage is highly autocorrelated (AR(1) process). A linear combination of lag_1 and rolling_mean_24 strongly predicts the current state. No implementation defect was found."
+    },
+    "december_holdout": {
+      "status": "PASS",
+      "findings": "December 2016 was strictly bypassed in the train_models loop. Test rows were only preprocessed and then dropped from memory."
+    },
+    "model_stability": {
+      "status": "PASS",
+      "findings": "Qualitative ordering is highly stable between 1% and 10%. Group B massively outperforms Group A. log1p models continue to exhibit extrapolation explosions without tuning (LinearRegression, log1p, Group B R2 = -49,291,116)."
+    }
+  },
+  "research_questions": {
+    "RQ1": "Raw targets strongly outperform log1p in this untuned configuration when evaluated on original energy scale. log1p models suffer from catastrophic exponentiation of extrapolation errors.",
+    "RQ2": "Historical features (Group B) provide overwhelming predictive power, pushing R2 from ~0.79 (exogenous only) to ~0.95. The problem is fundamentally autoregressive.",
+    "RQ3": "Yes, patterns are stable. Row counts scaled roughly 10x (Train: 1,609,317 vs 221,885), and model families retained their qualitative behavioral characteristics."
+  },
+  "issues_found": [],
+  "required_corrections": []
+}

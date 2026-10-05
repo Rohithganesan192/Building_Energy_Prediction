@@ -1,0 +1,452 @@
+{
+    "metadata": {
+        "file_size_mb": 0.043417930603027344,
+        "num_rows": 1449,
+        "num_columns": 6,
+        "column_names": [
+            "site_id",
+            "building_id",
+            "primary_use",
+            "square_feet",
+            "year_built",
+            "floor_count"
+        ],
+        "dtypes": {
+            "site_id": "int64",
+            "building_id": "int64",
+            "primary_use": "str",
+            "square_feet": "int64",
+            "year_built": "float64",
+            "floor_count": "float64"
+        },
+        "example_values": {
+            "site_id": "0",
+            "building_id": "0",
+            "primary_use": "Education",
+            "square_feet": "7432",
+            "year_built": "2008.0",
+            "floor_count": "5.0"
+        },
+        "missing_counts": {
+            "site_id": 0,
+            "building_id": 0,
+            "primary_use": 0,
+            "square_feet": 0,
+            "year_built": 774,
+            "floor_count": 1094
+        },
+        "missing_percentages": {
+            "site_id": 0.0,
+            "building_id": 0.0,
+            "primary_use": 0.0,
+            "square_feet": 0.0,
+            "year_built": 53.41614906832298,
+            "floor_count": 75.50034506556246
+        },
+        "unique_site_ids": 16,
+        "unique_building_ids": 1449,
+        "primary_use_categories": 16,
+        "primary_uses": [
+            "Education",
+            "Lodging/residential",
+            "Office",
+            "Entertainment/public assembly",
+            "Other",
+            "Retail",
+            "Parking",
+            "Public services",
+            "Warehouse/storage",
+            "Food sales and service",
+            "Religious worship",
+            "Healthcare",
+            "Utility",
+            "Technology/science",
+            "Manufacturing/industrial",
+            "Services"
+        ],
+        "min_year_built": 1900.0,
+        "max_year_built": 2017.0,
+        "min_square_feet": 283.0,
+        "max_square_feet": 875000.0,
+        "min_floor_count": 1.0,
+        "max_floor_count": 26.0
+    },
+    "weather_train": {
+        "file_size_mb": 7.104945182800293,
+        "num_rows": 139773,
+        "num_columns": 9,
+        "column_names": [
+            "site_id",
+            "timestamp",
+            "air_temperature",
+            "cloud_coverage",
+            "dew_temperature",
+            "precip_depth_1_hr",
+            "sea_level_pressure",
+            "wind_direction",
+            "wind_speed"
+        ],
+        "dtypes": {
+            "site_id": "int64",
+            "timestamp": "str",
+            "air_temperature": "float64",
+            "cloud_coverage": "float64",
+            "dew_temperature": "float64",
+            "precip_depth_1_hr": "float64",
+            "sea_level_pressure": "float64",
+            "wind_direction": "float64",
+            "wind_speed": "float64"
+        },
+        "example_values": {
+            "site_id": "0",
+            "timestamp": "2016-01-01 00:00:00",
+            "air_temperature": "25.0",
+            "cloud_coverage": "6.0",
+            "dew_temperature": "20.0",
+            "precip_depth_1_hr": "-1.0",
+            "sea_level_pressure": "1019.7",
+            "wind_direction": "0.0",
+            "wind_speed": "0.0"
+        },
+        "missing_counts": {
+            "site_id": 0,
+            "timestamp": 0,
+            "air_temperature": 55,
+            "cloud_coverage": 69173,
+            "dew_temperature": 113,
+            "precip_depth_1_hr": 50289,
+            "sea_level_pressure": 10618,
+            "wind_direction": 6268,
+            "wind_speed": 304
+        },
+        "missing_percentages": {
+            "site_id": 0.0,
+            "timestamp": 0.0,
+            "air_temperature": 0.03934951671639015,
+            "cloud_coverage": 49.48952945132465,
+            "dew_temperature": 0.08084537070821976,
+            "precip_depth_1_hr": 35.97905174819171,
+            "sea_level_pressure": 7.596603063538737,
+            "wind_direction": 4.484414014151517,
+            "wind_speed": 0.21749551057786554
+        },
+        "unique_site_ids": 16,
+        "min_timestamp": "2016-01-01 00:00:00",
+        "max_timestamp": "2016-12-31 23:00:00",
+        "weather_variables": [
+            "air_temperature",
+            "cloud_coverage",
+            "dew_temperature",
+            "precip_depth_1_hr",
+            "sea_level_pressure",
+            "wind_direction",
+            "wind_speed"
+        ],
+        "numerical_statistics": {
+            "air_temperature": {
+                "min": -28.9,
+                "max": 47.2,
+                "mean": 14.418106471607095
+            },
+            "cloud_coverage": {
+                "min": 0.0,
+                "max": 9.0,
+                "mean": 2.1493059490084985
+            },
+            "dew_temperature": {
+                "min": -35.0,
+                "max": 26.1,
+                "mean": 7.3501582414435065
+            },
+            "precip_depth_1_hr": {
+                "min": -1.0,
+                "max": 343.0,
+                "mean": 0.9830472486701534
+            },
+            "sea_level_pressure": {
+                "min": 968.2,
+                "max": 1045.5,
+                "mean": 1016.1580380163371
+            },
+            "wind_direction": {
+                "min": 0.0,
+                "max": 360.0,
+                "mean": 180.52663196134975
+            },
+            "wind_speed": {
+                "min": 0.0,
+                "max": 19.0,
+                "mean": 3.5605274290344093
+            }
+        }
+    },
+    "weather_test": {
+        "file_size_mb": 14.102848052978516,
+        "num_rows": 277243,
+        "num_columns": 9,
+        "column_names": [
+            "site_id",
+            "timestamp",
+            "air_temperature",
+            "cloud_coverage",
+            "dew_temperature",
+            "precip_depth_1_hr",
+            "sea_level_pressure",
+            "wind_direction",
+            "wind_speed"
+        ],
+        "dtypes": {
+            "site_id": "int64",
+            "timestamp": "str",
+            "air_temperature": "float64",
+            "cloud_coverage": "float64",
+            "dew_temperature": "float64",
+            "precip_depth_1_hr": "float64",
+            "sea_level_pressure": "float64",
+            "wind_direction": "float64",
+            "wind_speed": "float64"
+        },
+        "example_values": {
+            "site_id": "0",
+            "timestamp": "2017-01-01 00:00:00",
+            "air_temperature": "17.8",
+            "cloud_coverage": "4.0",
+            "dew_temperature": "11.7",
+            "precip_depth_1_hr": "0.0",
+            "sea_level_pressure": "1021.4",
+            "wind_direction": "100.0",
+            "wind_speed": "3.6"
+        },
+        "missing_counts": {
+            "site_id": 0,
+            "timestamp": 0,
+            "air_temperature": 104,
+            "cloud_coverage": 140448,
+            "dew_temperature": 327,
+            "precip_depth_1_hr": 95588,
+            "sea_level_pressure": 21265,
+            "wind_direction": 12370,
+            "wind_speed": 460
+        },
+        "missing_percentages": {
+            "site_id": 0.0,
+            "timestamp": 0.0,
+            "air_temperature": 0.037512218523100674,
+            "cloud_coverage": 50.658808337811955,
+            "dew_temperature": 0.11794707170244155,
+            "precip_depth_1_hr": 34.47805715563603,
+            "sea_level_pressure": 7.670166604747459,
+            "wind_direction": 4.461789837795725,
+            "wind_speed": 0.1659194280829453
+        },
+        "unique_site_ids": 16,
+        "min_timestamp": "2017-01-01 00:00:00",
+        "max_timestamp": "2018-12-31 23:00:00",
+        "weather_variables": [
+            "air_temperature",
+            "cloud_coverage",
+            "dew_temperature",
+            "precip_depth_1_hr",
+            "sea_level_pressure",
+            "wind_direction",
+            "wind_speed"
+        ],
+        "numerical_statistics": {
+            "air_temperature": {
+                "min": -28.1,
+                "max": 48.3,
+                "mean": 14.27686287386474
+            },
+            "cloud_coverage": {
+                "min": 0.0,
+                "max": 9.0,
+                "mean": 2.1873167878942943
+            },
+            "dew_temperature": {
+                "min": -31.6,
+                "max": 26.7,
+                "mean": 7.487658351268977
+            },
+            "precip_depth_1_hr": {
+                "min": -1.0,
+                "max": 597.0,
+                "mean": 1.095395117117613
+            },
+            "sea_level_pressure": {
+                "min": 972.0,
+                "max": 1050.1,
+                "mean": 1016.1957621358085
+            },
+            "wind_direction": {
+                "min": 0.0,
+                "max": 360.0,
+                "mean": 180.42602303745568
+            },
+            "wind_speed": {
+                "min": 0.0,
+                "max": 24.2,
+                "mean": 3.548872582492422
+            }
+        }
+    },
+    "submission": {
+        "file_size_mb": 426.82887172698975,
+        "num_rows": 41697600,
+        "num_columns": 2,
+        "column_names": [
+            "row_id",
+            "meter_reading"
+        ],
+        "dtypes": {
+            "row_id": "int64",
+            "meter_reading": "int64"
+        },
+        "example_values": {
+            "row_id": "0",
+            "meter_reading": "0"
+        },
+        "missing_counts": {
+            "row_id": 0,
+            "meter_reading": 0
+        },
+        "missing_percentages": {
+            "row_id": 0.0,
+            "meter_reading": 0.0
+        },
+        "first_five_rows": [
+            {
+                "row_id": 0,
+                "meter_reading": 0
+            },
+            {
+                "row_id": 1,
+                "meter_reading": 0
+            },
+            {
+                "row_id": 2,
+                "meter_reading": 0
+            },
+            {
+                "row_id": 3,
+                "meter_reading": 0
+            },
+            {
+                "row_id": 4,
+                "meter_reading": 0
+            }
+        ],
+        "identifier_column": "row_id"
+    },
+    "train": {
+        "file_size_mb": 647.1792602539062,
+        "num_rows": 20216100,
+        "num_columns": 4,
+        "column_names": [
+            "building_id",
+            "meter",
+            "timestamp",
+            "meter_reading"
+        ],
+        "dtypes": {
+            "building_id": "int64",
+            "meter": "int64",
+            "timestamp": "str",
+            "meter_reading": "float64"
+        },
+        "example_values": {
+            "building_id": "0",
+            "meter": "0",
+            "timestamp": "2016-01-01 00:00:00",
+            "meter_reading": "0.0"
+        },
+        "missing_counts": {
+            "building_id": 0,
+            "meter": 0,
+            "timestamp": 0,
+            "meter_reading": 0
+        },
+        "missing_percentages": {
+            "building_id": 0.0,
+            "meter": 0.0,
+            "timestamp": 0.0,
+            "meter_reading": 0.0
+        },
+        "unique_building_ids_count": 1449,
+        "unique_meters": 4,
+        "chunk_duplicates_sum": 0,
+        "has_target_column": true,
+        "min_timestamp": "2016-01-01 00:00:00",
+        "max_timestamp": "2016-12-31 23:00:00",
+        "target_stats": {
+            "name": "meter_reading",
+            "count": 20216100,
+            "missing_count": 0,
+            "min": 0.0,
+            "max": 21904700.0,
+            "mean": 2117.121076211683,
+            "approximate_median_from_sample": 79.695,
+            "std": 153235.6212084959
+        }
+    },
+    "test": {
+        "file_size_mb": 1394.7115755081177,
+        "num_rows": 41697600,
+        "num_columns": 4,
+        "column_names": [
+            "row_id",
+            "building_id",
+            "meter",
+            "timestamp"
+        ],
+        "dtypes": {
+            "row_id": "int64",
+            "building_id": "int64",
+            "meter": "int64",
+            "timestamp": "str"
+        },
+        "example_values": {
+            "row_id": "0",
+            "building_id": "0",
+            "meter": "0",
+            "timestamp": "2017-01-01 00:00:00"
+        },
+        "missing_counts": {
+            "row_id": 0,
+            "building_id": 0,
+            "meter": 0,
+            "timestamp": 0
+        },
+        "missing_percentages": {
+            "row_id": 0.0,
+            "building_id": 0.0,
+            "meter": 0.0,
+            "timestamp": 0.0
+        },
+        "unique_building_ids_count": 1449,
+        "unique_meters": 4,
+        "chunk_duplicates_sum": 0,
+        "has_target_column": false,
+        "min_timestamp": "2017-01-01 00:00:00",
+        "max_timestamp": "2018-12-31 23:00:00"
+    },
+    "relationships": {
+        "train_buildings_missing_from_metadata": 0,
+        "test_buildings_missing_from_metadata": 0,
+        "train_sites_missing_from_weather": 0,
+        "test_sites_missing_from_weather": 0,
+        "unmatched_wtrain_sites": [],
+        "unmatched_wtest_sites": []
+    },
+    "environment": {
+        "python_version": "3.12.10",
+        "pandas_version": "3.0.6",
+        "numpy_version": "2.5.3",
+        "imports": {
+            "sklearn": "Success",
+            "xgboost": "Success",
+            "lightgbm": "Success",
+            "catboost": "Success",
+            "shap": "Success"
+        }
+    }
+}

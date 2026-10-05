@@ -1,0 +1,12 @@
+{
+    "model": "RandomForestRegressor",
+    "features": "GroupB",
+    "target": "raw",
+    "training_rows": 1975653,
+    "holdout_rows": 184584,
+    "holdout_metrics": {
+        "MAE": 34.35549414698712,
+        "RMSE": 175.64598700853307,
+        "R2": 0.9876365115809524
+    }
+}

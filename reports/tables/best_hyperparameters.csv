@@ -1,0 +1,7 @@
+model,best_params
+LinearRegression,{}
+DecisionTree,"{""min_samples_split"": 50, ""min_samples_leaf"": 20, ""max_features"": null, ""max_depth"": 15}"
+RandomForest,"{""n_estimators"": 200, ""min_samples_split"": 2, ""min_samples_leaf"": 20, ""max_features"": null, ""max_depth"": 20}"
+XGBoost,"{""subsample"": 0.7, ""reg_lambda"": 10, ""reg_alpha"": 0, ""n_estimators"": 300, ""min_child_weight"": 1, ""max_depth"": 7, ""learning_rate"": 0.1, ""colsample_bytree"": 1.0}"
+LightGBM,"{""subsample"": 1.0, ""reg_lambda"": 5, ""reg_alpha"": 0, ""num_leaves"": 31, ""n_estimators"": 100, ""min_child_samples"": 50, ""max_depth"": 9, ""learning_rate"": 0.05, ""colsample_bytree"": 1.0}"
+CatBoost,"{""random_strength"": 5, ""learning_rate"": 0.05, ""l2_leaf_reg"": 3, ""iterations"": 200, ""depth"": 8, ""bagging_temperature"": 5}"

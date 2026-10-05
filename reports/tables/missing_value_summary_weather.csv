@@ -1,0 +1,10 @@
+column,missing_count,missing_pct
+cloud_coverage,69173,49.4895
+precip_depth_1_hr,56069,40.1143
+sea_level_pressure,10618,7.5966
+wind_direction,6268,4.4844
+wind_speed,304,0.2175
+dew_temperature,113,0.0808
+air_temperature,55,0.0393
+site_id,0,0.0
+timestamp,0,0.0
