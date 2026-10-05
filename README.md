@@ -3,8 +3,8 @@
 An end-to-end building energy prediction system using machine learning and SHAP for explainable, data-driven efficiency optimization.
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=flat-square)](https://python.org)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.103-009688?style=flat-square)](https://fastapi.tiangolo.com/)
-[![React](https://img.shields.io/badge/React-18-61dafb?style=flat-square)](https://react.dev)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.142.2-009688?style=flat-square)](https://fastapi.tiangolo.com/)
+[![React](https://img.shields.io/badge/React-19-61dafb?style=flat-square)](https://react.dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-gray?style=flat-square)](LICENSE)
 
 [Quick Start](#quick-start) • [Architecture](#approach) • [Research](#research)
@@ -71,7 +71,6 @@ Double-click `STOP_BEI.bat`
 ├── app/                  # FastAPI backend and React frontend source
 ├── docs/                 # Documentation (Architecture, Schema, XAI)
 ├── models/               # Serialized final models and preprocessors
-├── notebooks/            # Exploratory data analysis and model training
 ├── reports/              # Final experiment results and evaluation logs
 ├── tests/                # Automated backend test suite
 ├── README.md             # Project overview
